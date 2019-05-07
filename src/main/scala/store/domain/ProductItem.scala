@@ -25,10 +25,7 @@ object Currency extends Enum[Currency] {
   override def values: immutable.IndexedSeq[Currency] = findValues
 }
 
-case class ProductItem(productId: UUID, minorCurrencyValue: Int, currency: Currency, desc:String) {
+case class ProductItem(productId: UUID, minorCurrencyValue: Int, currency: Currency, desc:String, quantity:Int) {
   def toMajorCurrencyValue: Long = minorCurrencyValue * currency.multipliers
 }
 
-object ProductItem {
-  def apply(minorCurrencyValue: Int, currency: Currency, desc: String): ProductItem = new ProductItem(UUID.randomUUID, minorCurrencyValue, currency, desc)
-}
