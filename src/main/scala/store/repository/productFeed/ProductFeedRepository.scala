@@ -41,5 +41,5 @@ class ProductFeedRepository[F[_]: Applicative] extends ProductFeedRepositoryLike
 }
 
 object ProductFeedRepository {
-  def apply[F[_]: Applicative](): ProductFeedRepository[F] = new ProductFeedRepository[F]()
+  def apply[F[_]: Applicative](): ProductFeedRepositoryLike[F] = new ProductFeedRepository[F]()
 }
