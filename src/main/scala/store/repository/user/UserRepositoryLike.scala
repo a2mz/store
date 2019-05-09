@@ -1,7 +1,5 @@
 package store.repository.user
 
-import java.util.UUID
-
 import store.domain.User
 
 trait UserRepositoryLike[F[_]] {
