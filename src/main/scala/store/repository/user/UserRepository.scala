@@ -3,6 +3,7 @@ package store.repository.user
 import cats.Applicative
 import cats.implicits._
 import store.domain.User
+
 import scala.collection.concurrent.TrieMap
 
 class UserRepository[F[_]: Applicative] extends UserRepositoryLike[F] {

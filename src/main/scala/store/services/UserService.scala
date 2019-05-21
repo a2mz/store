@@ -5,6 +5,7 @@ import java.util.UUID
 import cats._
 import cats.data._
 import cats.implicits._
+import play.api.libs.json.{JsString, Writes}
 import store.domain.User
 import store.repository.user.UserRepositoryLike
 import store.services.UserService.{UserAlreadyExist, UserNotFound, UserServiceError}
@@ -25,6 +26,11 @@ object UserService {
     new UserService(userRepo)
 
   sealed trait UserServiceError
+
+  object UserServiceError {
+    implicit val userServiceErrorFormat: Writes[UserServiceError] = (x: UserServiceError) => JsString(x.toString)
+  }
+
   case object UserNotFound     extends UserServiceError
   case object UserAlreadyExist extends UserServiceError
 

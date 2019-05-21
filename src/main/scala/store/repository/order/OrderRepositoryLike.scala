@@ -2,7 +2,7 @@ package store.repository.order
 
 import java.util.UUID
 
-import store.domain.{ProductItem, ShoppingCard, User}
+import store.domain.{ProductItem, ShoppingCard}
 
 trait OrderRepositoryLike[F[_]] {
   def getShoppingCard(userName: String): F[Option[ShoppingCard]]

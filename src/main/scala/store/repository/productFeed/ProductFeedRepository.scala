@@ -37,7 +37,7 @@ class ProductFeedRepository[F[_]: Applicative] extends ProductFeedRepositoryLike
   override def delete(productId: UUID, quantity: Int): F[Option[ProductItem]] =
     dataBase.get(productId).map(item => updateByKey(item.copy(quantity = quantity), minus)).pure[F]
 
-  override def getAll: F[List[ProductItem]] = ???
+  override def getAll: F[Iterable[ProductItem]] = dataBase.values.pure[F]
 }
 
 object ProductFeedRepository {
