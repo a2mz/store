@@ -9,7 +9,6 @@ libraryDependencies ++= {
   val playJsonVersion   = "2.6.8"
   val slf4jVersion      = "1.7.22"
   Seq(
-    "org.typelevel" %% "cats-core"     % "1.6.0",
     "org.typelevel" %% "cats-macros"   % catsVersion,
     "org.typelevel" %% "cats-kernel"   % catsVersion,
     "org.typelevel" %% "cats-core"     % catsVersion,
